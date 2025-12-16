@@ -1,0 +1,103 @@
+.attachments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.attachment-card {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 1rem;
+  border-left: 4px solid #3498db;
+}
+
+.attachment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.attachment-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  flex: 1;
+}
+
+.file-icon {
+  font-size: 1.2rem;
+}
+
+.category-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.attachment-preview {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.attachment-preview strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.attachment-preview p {
+  color: #2c3e50;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.attachment-meta {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.no-attachments {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.attachment-extracted-data {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: #e8f5e9;
+  border-radius: 4px;
+  border: 1px solid #c8e6c9;
+}
+
+.attachment-extracted-data > strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2e7d32;
+  font-size: 0.9rem;
+}
+
+.extracted-item {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #2c3e50;
+  line-height: 1.4;
+}
+
+.extracted-item strong {
+  color: #388e3c;
+  margin-right: 0.5rem;
+}
+
