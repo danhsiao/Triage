@@ -86,8 +86,13 @@ export async function processEmail(emailInput: EmailInput): Promise<CaseWithRela
     for (const att of extractedData.attachments) {
       // Find original attachment content for preview
       const originalAtt = emailInput.attachments?.find(a => a.filename === att.filename);
-      // Always use the actual content for preview, not the reason
-      const contentPreview = originalAtt?.content.substring(0, 500) || null;
+    const filename = att.filename || originalAtt?.filename;
+    if (!filename) {
+      // Skip attachments with no usable filename
+      continue;
+    }
+    // Always use the actual content for preview, not the reason
+    const contentPreview = originalAtt?.content.substring(0, 500) || null;
       
       // Get extracted attachment data
       const extractedAttData = attachmentDataMap.get(att.filename);
@@ -95,7 +100,7 @@ export async function processEmail(emailInput: EmailInput): Promise<CaseWithRela
 
       const attResult = insertAttachment.run(
         caseId,
-        att.filename,
+      filename,
         att.category,
         contentPreview,
         attachmentDataJson

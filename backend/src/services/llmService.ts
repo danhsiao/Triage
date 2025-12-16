@@ -154,6 +154,18 @@ ${email.attachments?.map(att => `- ${att.filename}: ${att.content.substring(0, 1
       }
     }
 
+    // Drop LLM-produced attachments without filenames
+    if (extracted.attachments) {
+      extracted.attachments = extracted.attachments
+        .map(att => {
+          if (!att.filename || !att.filename.trim()) {
+            return null;
+          }
+          return att;
+        })
+        .filter(Boolean) as typeof extracted.attachments;
+    }
+
     return extracted;
   } catch (error) {
     console.error('❌ Error extracting case data:', error);
